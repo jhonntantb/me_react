@@ -10,7 +10,6 @@ module.exports = {
 	},
 	extends: [
 		'plugin:react/recommended',
-		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 		'standard',
 		'eslint-config-prettier',
@@ -21,5 +20,10 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react'],
-	rules: {},
+	rules: {
+		quotes: ['error', 'single'],
+		semi: ['error', 'always'],
+		// 'no-unused-vars': 'off',
+		// indent: ['error', 'tab', { space: 2 }],
+	},
 };
