@@ -1,9 +1,12 @@
-import { projectsData } from '../../assets/data/dummy';
-import { PortfolioCard } from '../../components';
+import { useState } from 'react';
+import { projectsData, projectsDetail } from '../../assets/data/dummy';
+import { PortfolioCard, PortfolioDetail } from '../../components';
 
 import './Portfolio.css';
 
 const Portfolio = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [showDetail, setShowDetail] = useState(true);
   return (
     <section id='portfolio' className='portfolio'>
     <div className='container'>
@@ -14,7 +17,10 @@ const Portfolio = () => {
       </div>
       <div className='row portfolio-container'>
         {
-          projectsData.map(project => <PortfolioCard key={project.title} {...project} /> )
+          projectsData.map(project => <PortfolioCard key={project.id} {...project} /> )
+        }
+        {
+          showDetail&& projectsDetail.filter(e => e.projectId ===1).map(p => <PortfolioDetail key={p.projectId} {...p} />)  
         }
       </div>
 
