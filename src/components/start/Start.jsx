@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useStateContext } from '../../context/ContextProvider';
 
 const Start = () => {
     const [icon, setIcon] = useState('list');
+	const { navPosition, setNavClass } = useStateContext();
 
 	const handleIconNav = () => {
 		if (icon === 'list') {
@@ -11,11 +13,12 @@ const Start = () => {
 			setIcon('list');
 		}
 	};
+	console.log('class', navPosition);
   return (
-    <header id='header'>
+    <header id='header' className={`${navPosition}`}>
 			<div className='container'>
 				<h1>
-					<a href='#'>Jhonatan Tabraj</a>
+					<NavLink to='/' onClick={() => setNavClass('')}>Jhonatan Tabraj</NavLink>
 				</h1>
 				<h2>
 					Soy un apasionado <span>desarrollador web</span> de Perú
@@ -23,19 +26,19 @@ const Start = () => {
 				<nav id='navbar' className='navbar'>
 					<ul>
 						<li>
-							<NavLink className='nav-link active' to='/'>Inicio</NavLink>
+							<NavLink className='nav-link active' to='/' onClick={() => setNavClass('')}>Inicio</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/about'>Sobre Mí</NavLink>
+							<NavLink className='nav-link' to='/about' onClick={() => setNavClass('header-top')}>Sobre Mí</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/resume'>Curriculum</NavLink>
+							<NavLink className='nav-link' to='/resume' onClick={() => setNavClass('header-top')}>Curriculum</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link'to='/portfolio'>Portafolio</NavLink>
+							<NavLink className='nav-link'to='/portfolio' onClick={() => setNavClass('header-top')}>Portafolio</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/contact'>Contacto</NavLink>
+							<NavLink className='nav-link' to='/contact' onClick={() => setNavClass('header-top')}>Contacto</NavLink>
 						</li>
 					</ul>
 					<i
