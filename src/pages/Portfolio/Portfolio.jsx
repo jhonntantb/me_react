@@ -17,7 +17,7 @@ const Portfolio = () => {
       </div>
       <div className='row portfolio-container'>
         {
-          projectsData.map(project => <PortfolioCard key={project.id} {...project} /> )
+          false && projectsData.map(project => <PortfolioCard key={project.id} {...project} /> )
         }
         {
           showDetail&& projectsDetail.filter(e => e.projectId ===1).map(p => <PortfolioDetail key={p.projectId} {...p} />)  

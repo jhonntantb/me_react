@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { projectsDetail } from '../../assets/data/dummy';
 import './PortfolioDetail.css';
-
+import Carousel from '../carousel/Carousel';
 const PortfolioDetail = ({ title, projectInfo, description }) => {
   const detailFilter = projectsDetail.find(e => e.projectId ===1);
 
@@ -17,17 +17,9 @@ const PortfolioDetail = ({ title, projectInfo, description }) => {
             <div className='portfolio-details-slider swiper'>
               <div className='swiper-wrapper align-items-center'>
 
-                <div className='swiper-slide'>
-                  <img src={detailFilter.images.img1} alt='' className='img-detail' />
-                </div>
-
-                <div className='swiper-slide'>
-                  <img src={detailFilter.images.img2} alt='' className='img-detail' />
-                </div>
-
-                <div className='swiper-slide'>
-                  <img src={detailFilter.images.img3} alt='' className='img-detail' />
-                </div>
+                {
+                  <Carousel  imgData={detailFilter.images}/>
+                }
 
               </div>
               <div className='swiper-pagination'></div>
