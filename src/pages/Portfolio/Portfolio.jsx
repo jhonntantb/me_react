@@ -1,12 +1,25 @@
-import { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from 'react';
 import { projectsData, projectsDetail } from '../../assets/data/dummy';
-import { PortfolioCard, PortfolioDetail } from '../../components';
-
+import { Modal, PortfolioCard, PortfolioDetail } from '../../components';
+import { useModal } from '../../hooks/useModal';
+import {  useStateContext } from '../../context/ContextProvider';
 import './Portfolio.css';
 
 const Portfolio = () => {
   // eslint-disable-next-line no-unused-vars
-  const [showDetail, setShowDetail] = useState(true);
+  const [project,setProject] = useState();
+  const [isOpenDetail, openModalDetail, closeModalDetail] = useModal();
+  const { projectId } = useStateContext();
+
+
+  
+  useEffect(() => {
+    const projectSelect = projectsDetail.find( e => e.projectId===projectId);
+    setProject(projectSelect);
+  }, [projectId]);
+  
+  console.log('este es el id del proyecto', project);
   return (
     <section id='portfolio' className='portfolio'>
     <div className='container'>
@@ -17,10 +30,10 @@ const Portfolio = () => {
       </div>
       <div className='row portfolio-container'>
         {
-          false && projectsData.map(project => <PortfolioCard key={project.id} {...project} /> )
+          true && projectsData.map(p => <PortfolioCard key={p.id} handleDetail={openModalDetail}  {...p} /> )
         }
         {
-          showDetail&& projectsDetail.filter(e => e.projectId ===1).map(p => <PortfolioDetail key={p.projectId} {...p} />)  
+          project && <Modal key={project.projectId} isOpen={isOpenDetail}><PortfolioDetail key={project.projectId} handleButton={closeModalDetail} {...project} /></Modal> 
         }
       </div>
 

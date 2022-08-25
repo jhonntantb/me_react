@@ -24,6 +24,12 @@ export const projectsData = [
 		title: 'Petgram App',
 		text: 'App que muestra valor de monedas virtuales',
 	},
+	{
+		id: 4,
+		img: petgram,
+		title: 'Merceria Araceli App',
+		text: 'Pagina de compras para una merceria',
+	},
 ];
 
 export const projectsDetail = [
@@ -37,7 +43,8 @@ export const projectsDetail = [
 		},
 		projectInfo: {
 			category: 'web',
-			url: 'https://vue-js-exchange.vercel.app/',
+			url: 'https://admin-dashboard-brown-gamma.vercel.app/',
+			repository: '',
 		},
 		description:
 			'Este proyecto muestra tablero de manejo de información clasificada y expresada para su facil entendimiento e interpretación.',
@@ -48,6 +55,7 @@ export const projectsDetail = [
 		projectInfo: {
 			category: 'web',
 			url: 'https://admin-dashboard-brown-gamma.vercel.app/',
+			repository: 'https://github.com/jhonntantb/Vue.js-exchange',
 		},
 		description:
 			'Este proyecto muestra informacion actualizada de el valor de tipo de cambio de diferentente monedas sus tabla de cambios y mejores paginas de cambio.',
@@ -57,7 +65,18 @@ export const projectsDetail = [
 		title: 'App Petgram detalles',
 		projectInfo: {
 			category: 'web',
-			url: 'https://vue-js-exchange.vercel.app/',
+			url: 'https://petgram-jhonntan.vercel.app/',
+			repository: 'https://github.com/jhonntantb/petgram',
+		},
+		description: 'Este proyecto es un clon de instagram orientado a mascotas ',
+	},
+	{
+		projectId: 4,
+		title: 'Merceria Araceli detalles',
+		projectInfo: {
+			category: 'web',
+			url: 'https://pg-merceria-online.vercel.app/',
+			repository: 'https://github.com/egoyret/PG_MerceriaOnline',
 		},
 		description: 'Este proyecto es un clon de instagram orientado a mascotas ',
 	},
