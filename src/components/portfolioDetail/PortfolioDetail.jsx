@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import { projectsDetail } from '../../assets/data/dummy';
 import './PortfolioDetail.css';
 import Carousel from '../carousel/Carousel';
 import ButtonClose from '../Button/ButtonClose';
 import { useStateContext } from '../../context/ContextProvider';
 
-const PortfolioDetail = ({ title, projectInfo, description }) => {
-  const detailFilter = projectsDetail.find(e => e.projectId ===1);
+const PortfolioDetail = ({ title, images, projectInfo, description }) => {
   const { closeModalDetail } =useStateContext();
   return (
     <section id='portfolio' className='portfolio'>
@@ -19,7 +17,7 @@ const PortfolioDetail = ({ title, projectInfo, description }) => {
               <div className='portfolio-details-slider swiper'>
                 <div className='swiper-wrapper align-items-center'>
                   {
-                    <Carousel  imgData={detailFilter.images}/>
+                    <Carousel  imgData={images}/>
                   }
                 </div>
                 <div className='swiper-pagination'></div>

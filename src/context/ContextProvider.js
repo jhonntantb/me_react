@@ -15,8 +15,7 @@ export const ContextProvider = ({ children }) => {
 	};
 
 	const handleDetailModal = (value) => {
-		console.log('este es el value', value);
-		setProjectId(value);
+		setProjectId(parseInt(value));
 		openModalDetail();
 	};
 

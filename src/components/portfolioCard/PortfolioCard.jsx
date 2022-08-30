@@ -1,14 +1,8 @@
 /* eslint-disable react/prop-types */
 import {  useStateContext } from '../../context/ContextProvider';
 
-const PortfolioCard = ({ title, text, img, id, setProjectId }) => {
+const PortfolioCard = ({ title, text, img, id }) => {
    const { handleDetailModal } = useStateContext();
-  console.log('este es el id',id);
-
-  const handleModalByProyect = (value) =>{
-    handleDetailModal(value);
-    setProjectId(parseInt(value));
-  };
 
   return (
     <div className='col-lg-4 col-md-6 portfolio-item filter-app'>
@@ -19,7 +13,7 @@ const PortfolioCard = ({ title, text, img, id, setProjectId }) => {
           <p>{ text }</p>
           <div className='portfolio-links'>
             <a href='assets/img/portfolio/portfolio-1.jpg' data-gallery='portfolioGallery' className='portfolio-lightbox' title='App 1'><i className='bi bi-plus-lg'></i></a>
-            <a  id={id}><i id={id} onClick={e => handleModalByProyect(e.target.id)} className='bi bi-link-45deg'></i></a>
+            <a  id={id}><i id={id} onClick={e => handleDetailModal(e.target.id)} className='bi bi-link-45deg'></i></a>
           </div>
         </div>
       </div>

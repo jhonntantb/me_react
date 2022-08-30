@@ -13,7 +13,6 @@ const Start = () => {
 			setIcon('list');
 		}
 	};
-	console.log('class', navPosition);
   return (
     <header id='header' className={`${navPosition}`}>
 			<div className='container'>

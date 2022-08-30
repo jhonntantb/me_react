@@ -8,8 +8,7 @@ import './Portfolio.css';
 const Portfolio = () => {
   // eslint-disable-next-line no-unused-vars
   const [project, setProject] = useState({});
-  const [projectId, setProjectId] =useState(1);
-  const { isOpenDetail, closeModalDetail } = useStateContext();
+  const { isOpenDetail, projectId, closeModalDetail } = useStateContext();
 
 
   
@@ -22,7 +21,6 @@ const Portfolio = () => {
     setProject(projectsDetail.find( e => e.projectId===projectId));
   }, [projectId]);
   
-  console.log('proyecto id sdfnlksdnklsdknl',projectId, project);
   return (
     <section id='portfolio' className='portfolio'>
     <div className='container'>
@@ -33,7 +31,7 @@ const Portfolio = () => {
       </div>
       <div className='row portfolio-container'>
         {
-          true && projectsData.map(p => <PortfolioCard setProjectId={setProjectId} key={p.id} {...p} /> )
+          true && projectsData.map(p => <PortfolioCard  key={p.id} {...p} /> )
         }
         {
           isOpenDetail && <Modal key={project.projectId} ><PortfolioDetail key={project.projectId} handleButton={closeModalDetail} {...project} /></Modal> 

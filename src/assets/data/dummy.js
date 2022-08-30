@@ -4,6 +4,12 @@ import petgram from '../data/petgram/petgram.PNG';
 import calendar from '../data/dashboard/calendar.PNG';
 import orders from '../data/dashboard/orders.PNG';
 import kanban from '../data/dashboard/kanban.PNG';
+import exchange1 from '../data/exchange/exchange1.PNG';
+import exchange2 from '../data/exchange/exchange2.PNG';
+import exchange3 from '../data/exchange/exchange3.PNG';
+import petgram1 from '../data/petgram/petgram1.PNG';
+import petgram2 from '../data/petgram/petgram2.PNG';
+import petgram3 from '../data/petgram/petgram3.PNG';
 
 export const projectsData = [
 	{
@@ -52,6 +58,11 @@ export const projectsDetail = [
 	{
 		projectId: 2,
 		title: 'App exchange detalles',
+		images: {
+			img1: exchange1,
+			img2: exchange2,
+			img3: exchange3,
+		},
 		projectInfo: {
 			category: 'web',
 			url: 'https://vue-js-exchange.vercel.app/',
@@ -63,6 +74,11 @@ export const projectsDetail = [
 	{
 		projectId: 3,
 		title: 'App Petgram detalles',
+		images: {
+			img1: petgram1,
+			img2: petgram2,
+			img3: petgram3,
+		},
 		projectInfo: {
 			category: 'web',
 			url: 'https://petgram-jhonntan.vercel.app/',
@@ -73,6 +89,11 @@ export const projectsDetail = [
 	{
 		projectId: 4,
 		title: 'Merceria Araceli detalles',
+		images: {
+			img1: calendar,
+			img2: orders,
+			img3: kanban,
+		},
 		projectInfo: {
 			category: 'web',
 			url: 'https://pg-merceria-online.vercel.app/',
