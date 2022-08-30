@@ -54,7 +54,7 @@ export const projectsDetail = [
 		title: 'App exchange detalles',
 		projectInfo: {
 			category: 'web',
-			url: 'https://admin-dashboard-brown-gamma.vercel.app/',
+			url: 'https://vue-js-exchange.vercel.app/',
 			repository: 'https://github.com/jhonntantb/Vue.js-exchange',
 		},
 		description:

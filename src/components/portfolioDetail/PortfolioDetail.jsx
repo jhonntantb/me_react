@@ -3,15 +3,16 @@ import { projectsDetail } from '../../assets/data/dummy';
 import './PortfolioDetail.css';
 import Carousel from '../carousel/Carousel';
 import ButtonClose from '../Button/ButtonClose';
+import { useStateContext } from '../../context/ContextProvider';
 
-const PortfolioDetail = ({ title, projectInfo, description, handleButton }) => {
+const PortfolioDetail = ({ title, projectInfo, description }) => {
   const detailFilter = projectsDetail.find(e => e.projectId ===1);
-
+  const { closeModalDetail } =useStateContext();
   return (
     <section id='portfolio' className='portfolio'>
       <div id='portfolio-details' className='portfolio-details'>
         <div className='container'>
-        <ButtonClose closeModal={handleButton} />
+        <ButtonClose closeModal={closeModalDetail} />
           <div className='row'>
             <div className='col-lg-8'>
               <h2 className='portfolio-title'>{title}</h2>

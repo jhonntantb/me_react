@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { useModal } from '../hooks/useModal';
 
 const StateContext = createContext();
 
@@ -7,8 +8,16 @@ export const ContextProvider = ({ children }) => {
 	const [navPosition, setNavPosition] = useState('');
 	const [projectId, setProjectId] = useState(1);
 
+	const [isOpenDetail, openModalDetail, closeModalDetail] = useModal();
+
 	const setNavClass = (value) => {
 		setNavPosition(value);
+	};
+
+	const handleDetailModal = (value) => {
+		console.log('este es el value', value);
+		setProjectId(value);
+		openModalDetail();
 	};
 
 	return (
@@ -19,6 +28,10 @@ export const ContextProvider = ({ children }) => {
 				setNavClass,
 				projectId,
 				setProjectId,
+				isOpenDetail,
+				openModalDetail,
+				closeModalDetail,
+				handleDetailModal,
 			}}
 		>
 			{children}

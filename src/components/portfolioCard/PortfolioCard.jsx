@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import {  useStateContext } from '../../context/ContextProvider';
 
-const PortfolioCard = ({ title, text, img, id, handleDetail }) => {
-   const { setProjectId } = useStateContext();
+const PortfolioCard = ({ title, text, img, id, setProjectId }) => {
+   const { handleDetailModal } = useStateContext();
   console.log('este es el id',id);
 
-  const handleState = (value) => {
-    setProjectId(value);
-    console.log('esta es el id del evento', value);
+  const handleModalByProyect = (value) =>{
+    handleDetailModal(value);
+    setProjectId(parseInt(value));
   };
 
   return (
@@ -19,7 +19,7 @@ const PortfolioCard = ({ title, text, img, id, handleDetail }) => {
           <p>{ text }</p>
           <div className='portfolio-links'>
             <a href='assets/img/portfolio/portfolio-1.jpg' data-gallery='portfolioGallery' className='portfolio-lightbox' title='App 1'><i className='bi bi-plus-lg'></i></a>
-            <a><i id={id} onClick={e => handleState(e.target.id)} className='bi bi-link-45deg'></i></a>
+            <a  id={id}><i id={id} onClick={e => handleModalByProyect(e.target.id)} className='bi bi-link-45deg'></i></a>
           </div>
         </div>
       </div>
