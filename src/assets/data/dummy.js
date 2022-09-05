@@ -17,24 +17,28 @@ export const projectsData = [
 		img: dashboard,
 		title: 'Dashboard App',
 		text: 'App que simula un dashboard de admin',
+		url: 'https://admin-dashboard-brown-gamma.vercel.app/',
 	},
 	{
 		id: 2,
 		img: exchange,
 		title: 'Exhange App',
 		text: 'App que muestra valor de monedas virtuales',
+		url: 'https://vue-js-exchange.vercel.app/',
 	},
 	{
 		id: 3,
 		img: petgram,
 		title: 'Petgram App',
 		text: 'App que muestra valor de monedas virtuales',
+		url: 'https://petgram-jhonntan.vercel.app/',
 	},
 	{
 		id: 4,
 		img: petgram,
 		title: 'Merceria Araceli App',
 		text: 'Pagina de compras para una merceria',
+		url: 'https://pg-merceria-online.vercel.app/',
 	},
 ];
 

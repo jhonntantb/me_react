@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { sendEmailForm } from '../../api';
+import { ErrorMessage, SendMessage, Modal }from '../../components';
 
+import './Contact.css';
 
 const Contact = () => {
   const formInitialDetails ={
@@ -10,6 +13,7 @@ const Contact = () => {
   };
 
   const [formInformation, setFormInformation] = useState(formInitialDetails);
+  const [statusForm, setStatusForm] = useState(200);
 
   const handleForm =(category, value) => {
     setFormInformation({
@@ -17,6 +21,14 @@ const Contact = () => {
       [category]: value
     });
   };
+
+  const submitForm = async(e) => {
+    e.preventDefault();
+    const res = await sendEmailForm(formInformation);
+    setStatusForm(res.code);
+    setFormInformation(formInitialDetails);
+  };
+ 
   return (
     <section id='contact' className='contact'>
     <div className='container'>
@@ -52,7 +64,7 @@ const Contact = () => {
           <div className='info-box'>
             <i className='bx bx-envelope'></i>
             <h3>Mi Correo</h3>
-            <p>jhonnytantb@gmail.com</p>
+            <p>jhonntantb@gmail.com</p>
           </div>
         </div>
         <div className='col-md-6 mt-4 d-flex align-items-stretch'>
@@ -64,7 +76,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <form>
+      <form onSubmit={submitForm} className="email-form mt-4">
         <div className='row'>
           <div className='col-md-6 form-group'>
             <input type='text' name='name' className='form-control' id='name' value={formInformation.name} placeholder='Tu nombre' required  onChange={e => handleForm('name', e.target. value)}/>
@@ -80,9 +92,9 @@ const Contact = () => {
           <textarea className='form-control' name='message' rows='5' value={formInformation.message} placeholder='Mensaje' required onChange={e => handleForm('message', e.target. value)}></textarea>
         </div>
         <div className='my-3'>
-          <div className='loading'>Loading</div>
-          <div className='error-message'></div>
-          <div className='sent-message'>Your message has been sent. Thank you!</div>
+          {
+            statusForm===200? <Modal ><SendMessage/></Modal> : <Modal><ErrorMessage /></Modal>
+          }
         </div>
         <div className='text-center'><button type='submit'>Send Message</button></div>
       </form>

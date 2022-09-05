@@ -9,7 +9,6 @@ export const ContextProvider = ({ children }) => {
 	const [projectId, setProjectId] = useState(1);
 
 	const [isOpenDetail, openModalDetail, closeModalDetail] = useModal();
-
 	const setNavClass = (value) => {
 		setNavPosition(value);
 	};

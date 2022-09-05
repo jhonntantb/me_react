@@ -16,13 +16,13 @@ const Resume = () => {
           <div className='resume-item pb-0'>
             <h4>Jhonatan Tabraj</h4>
             <p><em>Full Stack Developer, fascinado por la programación, por que me permite crear nuevas cosas y ver desde una perspectiva diferente como nos relacionamos con la tecnología  </em></p>
-            <p>
+            <div>
             <ul>
               <li>Jauja, Júnin, Perú</li>
               <li> <a href='https://wa.link/kztmsq' target='_blank' rel="noreferrer">+51 910626910</a></li>
               <li>jhonntantb@gmail.com</li>
             </ul>
-            </p>
+            </div>
           </div>
 
           <h3 className='resume-title'>Educación</h3>
@@ -46,35 +46,35 @@ const Resume = () => {
             <h4>Bank End Developer</h4>
             <h5>Enero-2022 / Marzo-2022</h5>
             <p><em><a  href='https://www.smartpyme.pe/' target='_blank' rel="noreferrer">SmartPyme</a></em></p>
-            <p>
+            <div>
             <ul>
               <li>Desarrolle APIs utilizando microservicios que eran consumidas por el equipo de Frond-End, y manejo de datos en SQL Server .</li>
               <li>NestJs | Typecript | NodeJS | Sequelize | SQL Server </li>
             </ul>
-            </p>
+            </div>
           </div>
           <div className='resume-item'>
             <h4>Full Stack Developer</h4>
             <h5>Julio-2021 / Agosto-2021</h5>
             <p><em>Countries  App</em></p>
-            <p>
+            <div>
             <ul>
               <li>Diseñe y Desarrolle una aplicación Web que me permite Países y dejar un registro de las actividades que se puedan realizar en ellos .</li>
               <li>React&Redux | CSS | Javascript | NodeJS | Express | Sequelize | PosgreSql </li>
             </ul>
-            </p>
+            </div>
           </div>
           <div className='resume-item'>
             <h4>Full Stack Developer</h4>
             <h5>Agosto-2021/ Setiembre-2021</h5>
             <p><em>Merceria Araceli</em></p>
-            <p>
+            <div>
             <ul>
               <li>Diseño y Desarrolo de un E-Commerce para una Merceria</li>
               <li>Participé de manera colaborativa en un equipo con reuniones diarias y sprints semanales con un product owner, utilizando Scrum.</li>
               <li>React&Redux | Bootstrap | CSS | Firebase | Javascript | NodeJS | Express | Sequelize | PosgreSql</li>
             </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>
