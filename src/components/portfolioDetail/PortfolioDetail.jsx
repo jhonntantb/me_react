@@ -14,7 +14,7 @@ const PortfolioDetail = ({ title, images, projectInfo, description }) => {
           <div className='row'>
             <div className='col-lg-8'>
               <h2 className='portfolio-title'>{title}</h2>
-              <div className='portfolio-details-slider swiper'>
+              <div className='portfolio-details-slider '>
                 <div className='swiper-wrapper align-items-center'>
                   {
                     <Carousel  imgData={images}/>

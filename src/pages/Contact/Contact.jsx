@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { sendEmailForm } from '../../api';
-import { ErrorMessage, SendMessage, Modal }from '../../components';
+import Swal from 'sweetalert2';
 
 import './Contact.css';
 
@@ -13,7 +13,6 @@ const Contact = () => {
   };
 
   const [formInformation, setFormInformation] = useState(formInitialDetails);
-  const [statusForm, setStatusForm] = useState(200);
 
   const handleForm =(category, value) => {
     setFormInformation({
@@ -25,9 +24,30 @@ const Contact = () => {
   const submitForm = async(e) => {
     e.preventDefault();
     const res = await sendEmailForm(formInformation);
-    setStatusForm(res.code);
+    setFormInformation(formInitialDetails);
+    if(res.code===200){ 
+      alertSuccess();
+    }else{
+      alertWrong();
+    }
     setFormInformation(formInitialDetails);
   };
+
+  const alertSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      text: 'El mensaje se envio correctamente',
+      confirmButtonText: 'Aceptar',
+    });
+  };
+  const alertWrong = () => {
+    Swal.fire({
+      icon: 'error',
+      text: 'Ocurrió un error intentalo nuevamente',
+      confirmButtonText: 'Aceptar',
+    });
+  };
+
  
   return (
     <section id='contact' className='contact'>
@@ -92,11 +112,8 @@ const Contact = () => {
           <textarea className='form-control' name='message' rows='5' value={formInformation.message} placeholder='Mensaje' required onChange={e => handleForm('message', e.target. value)}></textarea>
         </div>
         <div className='my-3'>
-          {
-            statusForm===200? <Modal ><SendMessage/></Modal> : <Modal><ErrorMessage /></Modal>
-          }
         </div>
-        <div className='text-center'><button type='submit'>Send Message</button></div>
+        <div className='text-center'><button type='submit'>Enviar Mensaje</button></div>
       </form>
 
     </div>
