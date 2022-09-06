@@ -12,6 +12,7 @@ export const ContextProvider = ({ children }) => {
 	const [isOpenDetail, openModalDetail, closeModalDetail] = useModal();
 
 	const setNavClass = (value) => {
+		localStorage.setItem('navPosition', value);
 		setNavPosition(value);
 		setInitPage('');
 	};
@@ -26,6 +27,7 @@ export const ContextProvider = ({ children }) => {
 		<StateContext.Provider
 			value={{
 				navPosition,
+				setNavPosition,
 				setNavClass,
 				projectId,
 				setProjectId,

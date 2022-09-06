@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useStateContext } from '../../context/ContextProvider';
+
 
 const Start = () => {
     const [icon, setIcon] = useState('list');
-	const { navPosition, setNavClass, initPage } = useStateContext();
+	const { navPosition, setNavClass, initPage, setNavPosition, setInitPage } = useStateContext();
+
+	const location = useLocation();
 
 	const handleIconNav = () => {
 		if (icon === 'list') {
@@ -13,6 +16,16 @@ const Start = () => {
 			setIcon('list');
 		}
 	};
+	useEffect(() => {
+		if(location.pathname==='/'){
+			setNavPosition('');
+			setInitPage('active');
+		}else{
+			setNavPosition('header-top');
+			setInitPage('');
+		}
+	}, []);
+	
   return (
     <header id='header' className={`${navPosition}`}>
 			<div className='container'>
