@@ -28,7 +28,7 @@ const PortfolioDetail = ({ title, images, projectInfo, description }) => {
               <ul>
                 <li><strong>Categoria</strong>: {projectInfo.category}</li>
                 <li><strong>Proyecto URL</strong>: <a href={projectInfo.url} target='_blank' rel="noreferrer">{projectInfo.url}</a></li>
-                <li><strong>Repositorio URL</strong>: <a href={projectInfo.url} target='_blank' rel="noreferrer">{projectInfo.url}</a></li>
+                <li><strong>Repositorio URL</strong>: <a href={projectInfo.repository} target='_blank' rel="noreferrer">{projectInfo.repository}</a></li>
               </ul>
               <p>
                 {description}
