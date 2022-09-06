@@ -4,7 +4,7 @@ import { useStateContext } from '../../context/ContextProvider';
 
 const Start = () => {
     const [icon, setIcon] = useState('list');
-	const { navPosition, setNavClass } = useStateContext();
+	const { navPosition, setNavClass, initPage } = useStateContext();
 
 	const handleIconNav = () => {
 		if (icon === 'list') {
@@ -25,7 +25,7 @@ const Start = () => {
 				<nav id='navbar' className='navbar'>
 					<ul>
 						<li>
-							<NavLink className='nav-link active' to='/' onClick={() => setNavClass('')}>Inicio</NavLink>
+							<NavLink className={`nav-link ${initPage}`} to='/' onClick={() => setNavClass('')}>Inicio</NavLink>
 						</li>
 						<li>
 							<NavLink className='nav-link' to='/about' onClick={() => setNavClass('header-top')}>Sobre Mí</NavLink>

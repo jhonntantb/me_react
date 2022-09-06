@@ -38,6 +38,7 @@ const Contact = () => {
       icon: 'success',
       text: 'El mensaje se envio correctamente',
       confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#18d26e'
     });
   };
   const alertWrong = () => {
@@ -45,6 +46,7 @@ const Contact = () => {
       icon: 'error',
       text: 'Ocurrió un error intentalo nuevamente',
       confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#ed3c0d'
     });
   };
 

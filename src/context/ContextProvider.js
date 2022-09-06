@@ -7,10 +7,13 @@ const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
 	const [navPosition, setNavPosition] = useState('');
 	const [projectId, setProjectId] = useState(1);
+	const [initPage, setInitPage] = useState('active');
 
 	const [isOpenDetail, openModalDetail, closeModalDetail] = useModal();
+
 	const setNavClass = (value) => {
 		setNavPosition(value);
+		setInitPage('');
 	};
 
 	const handleDetailModal = (value) => {
@@ -30,6 +33,8 @@ export const ContextProvider = ({ children }) => {
 				openModalDetail,
 				closeModalDetail,
 				handleDetailModal,
+				initPage,
+				setInitPage,
 			}}
 		>
 			{children}
