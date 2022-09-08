@@ -5,6 +5,7 @@ import { useStateContext } from '../../context/ContextProvider';
 
 const Start = () => {
     const [icon, setIcon] = useState('list');
+	const [styleMovil, setStyleMovil] = useState('');
 	const { navPosition, setNavClass, initPage, setNavPosition, setInitPage } = useStateContext();
 
 	const location = useLocation();
@@ -12,10 +13,19 @@ const Start = () => {
 	const handleIconNav = () => {
 		if (icon === 'list') {
 			setIcon('x');
+			setStyleMovil('navbar-mobile');
 		} else {
 			setIcon('list');
+			setStyleMovil('');
 		}
 	};
+
+	const handleStyleNavbar = (value) =>{
+		setNavClass(value);
+		setStyleMovil('');
+		setIcon('list');
+	};
+
 	useEffect(() => {
 		if(location.pathname==='/'){
 			setNavPosition('');
@@ -35,22 +45,22 @@ const Start = () => {
 				<h2>
 					Soy un apasionado <span>desarrollador web</span> de Perú
 				</h2>
-				<nav id='navbar' className='navbar'>
+				<nav id='navbar' className={`navbar ${styleMovil}`}>
 					<ul>
 						<li>
-							<NavLink className={`nav-link ${initPage}`} to='/' onClick={() => setNavClass('')}>Inicio</NavLink>
+							<NavLink className={`nav-link ${initPage}`} to='/' onClick={() => handleStyleNavbar('')}>Inicio</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/about' onClick={() => setNavClass('header-top')}>Sobre Mí</NavLink>
+							<NavLink className='nav-link' to='/about' onClick={() => handleStyleNavbar('header-top')}>Sobre Mí</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/resume' onClick={() => setNavClass('header-top')}>Curriculum</NavLink>
+							<NavLink className='nav-link' to='/resume' onClick={() => handleStyleNavbar('header-top')}>Curriculum</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link'to='/portfolio' onClick={() => setNavClass('header-top')}>Portafolio</NavLink>
+							<NavLink className='nav-link'to='/portfolio' onClick={() => handleStyleNavbar('header-top')}>Portafolio</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav-link' to='/contact' onClick={() => setNavClass('header-top')}>Contacto</NavLink>
+							<NavLink className='nav-link' to='/contact' onClick={() => handleStyleNavbar('header-top')}>Contacto</NavLink>
 						</li>
 					</ul>
 					<i
