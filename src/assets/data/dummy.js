@@ -10,6 +10,10 @@ import exchange3 from '../data/exchange/exchange3.PNG';
 import petgram1 from '../data/petgram/petgram1.PNG';
 import petgram2 from '../data/petgram/petgram2.PNG';
 import petgram3 from '../data/petgram/petgram3.PNG';
+import merceria from '../data/merceria/merceria.PNG';
+import merceria1 from '../data/merceria/merceria1.PNG';
+import merceria2 from '../data/merceria/merceria2.PNG';
+import merceria3 from '../data/merceria/merceria3.PNG';
 
 export const projectsData = [
 	{
@@ -35,7 +39,7 @@ export const projectsData = [
 	},
 	{
 		id: 4,
-		img: petgram,
+		img: merceria,
 		title: 'Merceria Araceli App',
 		text: 'Pagina de compras para una merceria',
 		url: 'https://pg-merceria-online.vercel.app/',
@@ -54,7 +58,7 @@ export const projectsDetail = [
 		projectInfo: {
 			category: 'web',
 			url: 'https://admin-dashboard-brown-gamma.vercel.app/',
-			repository: '',
+			repository: 'https://github.com/jhonntantb/admin_dashboard',
 		},
 		description:
 			'Este proyecto muestra tablero de manejo de información clasificada y expresada para su facil entendimiento e interpretación.',
@@ -73,7 +77,7 @@ export const projectsDetail = [
 			repository: 'https://github.com/jhonntantb/Vue.js-exchange',
 		},
 		description:
-			'Este proyecto muestra informacion actualizada de el valor de tipo de cambio de diferentente monedas sus tabla de cambios y mejores paginas de cambio.',
+			'Este proyecto muestra informacion actualizada de el valor de tipo de cambio de diferentes monedas, sus tabla de cambios y mejores paginas de cambio.',
 	},
 	{
 		projectId: 3,
@@ -94,15 +98,17 @@ export const projectsDetail = [
 		projectId: 4,
 		title: 'Merceria Araceli detalles',
 		images: {
-			img1: calendar,
-			img2: orders,
-			img3: kanban,
+			img1: merceria1,
+			img2: merceria2,
+			img3: merceria3,
 		},
 		projectInfo: {
 			category: 'web',
 			url: 'https://pg-merceria-online.vercel.app/',
 			repository: 'https://github.com/egoyret/PG_MerceriaOnline',
+			videoUrl: 'https://youtu.be/-P8S5s-Kcn4',
 		},
-		description: 'Este proyecto es un clon de instagram orientado a mascotas ',
+		description:
+			'Este proyecto fue desarrollado como un Ecommerce para una merceria, completo con base de datos, Dashboard para administrados y pasarela de pago ',
 	},
 ];

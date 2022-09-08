@@ -4,7 +4,7 @@ import Carousel from '../carousel/Carousel';
 import ButtonClose from '../Button/ButtonClose';
 import { useStateContext } from '../../context/ContextProvider';
 
-const PortfolioDetail = ({ title, images, projectInfo, description }) => {
+const PortfolioDetail = ({ projectId, title, images, projectInfo, description }) => {
   const { closeModalDetail } =useStateContext();
   return (
     <section id='portfolio' className='portfolio'>
@@ -29,6 +29,7 @@ const PortfolioDetail = ({ title, images, projectInfo, description }) => {
                 <li><strong>Categoria</strong>: {projectInfo.category}</li>
                 <li><strong>Proyecto URL</strong>: <a href={projectInfo.url} target='_blank' rel="noreferrer">{projectInfo.url}</a></li>
                 <li><strong>Repositorio URL</strong>: <a href={projectInfo.repository} target='_blank' rel="noreferrer">{projectInfo.repository}</a></li>
+                {projectId===4 && <li><strong>Video de Presentación</strong>: <a href={projectInfo.videoUrl} target='_blank' rel="noreferrer">{projectInfo.videoUrl}</a></li>}
               </ul>
               <p>
                 {description}
