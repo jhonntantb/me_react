@@ -20,28 +20,28 @@ export const projectsData = [
 		id: 1,
 		img: dashboard,
 		title: 'Dashboard App',
-		text: 'App que simula un dashboard de admin',
+		text: 'App que simula un dashboard de administrador',
 		url: 'https://admin-dashboard-brown-gamma.vercel.app/',
 	},
 	{
 		id: 2,
 		img: exchange,
 		title: 'Exhange App',
-		text: 'App que muestra valor de monedas virtuales',
+		text: 'App que muestra información de monedas',
 		url: 'https://vue-js-exchange.vercel.app/',
 	},
 	{
 		id: 3,
 		img: petgram,
 		title: 'Petgram App',
-		text: 'App que muestra valor de monedas virtuales',
+		text: 'App de fotos de mascotas',
 		url: 'https://petgram-jhonntan.vercel.app/',
 	},
 	{
 		id: 4,
 		img: merceria,
 		title: 'Merceria Araceli App',
-		text: 'Pagina de compras para una merceria',
+		text: 'Ecommerce de una merceria',
 		url: 'https://pg-merceria-online.vercel.app/',
 	},
 ];
@@ -61,7 +61,7 @@ export const projectsDetail = [
 			repository: 'https://github.com/jhonntantb/admin_dashboard',
 		},
 		description:
-			'Este proyecto muestra tablero de manejo de información clasificada y expresada para su facil entendimiento e interpretación.',
+			'Este proyecto muestra dashboard de manejo de información clasificada y expresada para su facil entendimiento e interpretación.',
 	},
 	{
 		projectId: 2,
@@ -77,7 +77,7 @@ export const projectsDetail = [
 			repository: 'https://github.com/jhonntantb/Vue.js-exchange',
 		},
 		description:
-			'Este proyecto muestra informacion actualizada de el valor de tipo de cambio de diferentes monedas, sus tabla de cambios y mejores paginas de cambio.',
+			'Este proyecto muestra informacion actualizada la fliuctuación del tipo de cambio de diferentes monedas, grafico de cambios y mejores paginas de cambio.',
 	},
 	{
 		projectId: 3,
@@ -109,6 +109,6 @@ export const projectsDetail = [
 			videoUrl: 'https://youtu.be/-P8S5s-Kcn4',
 		},
 		description:
-			'Este proyecto fue desarrollado como un Ecommerce para una merceria, completo con base de datos, Dashboard para administrados y pasarela de pago ',
+			'Este proyecto desarrollamos un Ecommerce para una merceria, la inplemetación fue desde cero,DER de base de datos, API, Dashboard para administradores y empleados, interface de usuario que incluia cuenta y pasarela de pago ',
 	},
 ];
