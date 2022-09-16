@@ -3,6 +3,7 @@ import './PortfolioDetail.css';
 import Carousel from '../carousel/Carousel';
 import ButtonClose from '../Button/ButtonClose';
 import { useStateContext } from '../../context/ContextProvider';
+import ReactPlayer from 'react-player';
 
 const PortfolioDetail = ({ projectId, title, images, projectInfo, description }) => {
   const { closeModalDetail } =useStateContext();
@@ -17,7 +18,14 @@ const PortfolioDetail = ({ projectId, title, images, projectInfo, description })
               <div className='portfolio-details-slider '>
                 <div className='swiper-wrapper align-items-center'>
                   {
-                    <Carousel  imgData={images}/>
+                    projectId!==4?
+                    <Carousel  imgData={images}/>:
+                    <ReactPlayer 
+                    url={projectInfo.videoUrl}
+                    controls
+                    loop
+                    playing
+                    />
                   }
                 </div>
                 <div className='swiper-pagination'></div>
