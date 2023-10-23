@@ -23,14 +23,14 @@ const About = () => {
             <div className='row'>
               <div className='col-lg-6'>
                 <ul>
-                  <li><i className='bi bi-chevron-right'></i> <strong>Website:</strong>https://jhonntantb.github.io/me/<span></span></li>
-                  <li><i className='bi bi-chevron-right'></i> <strong>Phone:</strong> <span>+51 910626910</span></li>
-                  <li><i className='bi bi-chevron-right'></i> <strong>City:</strong> <span>Jauja, Perú</span></li>
+                  <li><i className='bi bi-chevron-right'></i> <strong>Website:</strong>https://me-react.vercel.app/<span></span></li>
+                  <li><i className='bi bi-chevron-right'></i> <strong>Phone:</strong> <span>+54 1124072105</span></li>
+                  <li><i className='bi bi-chevron-right'></i> <strong>City:</strong> <span>CABA, Argentina</span></li>
                 </ul>
               </div>
               <div className='col-lg-6'>
                 <ul>
-                  <li><i className='bi bi-chevron-right'></i> <strong>Age:</strong> <span>31</span></li>
+                  <li><i className='bi bi-chevron-right'></i> <strong>Age:</strong> <span>33</span></li>
                   <li><i className='bi bi-chevron-right'></i> <strong>Email:</strong> <span>jhonntantb@gmail.com</span></li>
                   <li><i className='bi bi-chevron-right'></i> <strong>Freelance:</strong> <span>Disponible</span></li>
                 </ul>
